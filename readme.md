@@ -13,3 +13,7 @@
 5. obrazac plaćanja za uslugu, izdavanje računa
 
 6. potvrda o transakciji i primopredaja vozila
+
+voziloRentPZI( ID_vozila(PK), registracija, proizvođač, model, godište, cijenaPoDanu, tipGoriva, slika, opis), 
+KorisnikRentPZI(ID_korisnika(PK), ime, prezime, brojMob),
+RacunRentPZI(ID_vozila(PK,FK1), ID_korisnika(PK,FK2), brojDanaUNajmu, ukupnaCijena)

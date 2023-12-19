@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracija novog korisnika</title>
+    <link rel="stylesheet" href="../CSS/style_web-shop.css"-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
+
+    <script>
+        function posalji(){
+            //alert("poziv funkcije");
+            let ime=document.getElementById("Ime").value;
+            let prezime=document.getElementById("Prezime").value;
+            let email=document.getElementById("Email").value;
+            let drzava=document.getElementById("Drzava").value;
+            let grad=document.getElementById("Grad").value;
+            let adrRacun=document.getElementById("AdrRacun").value;
+            let adrDostava=document.getElementById("AdrDostava").value;
+            document.getElementById("NoviKorisnikUnos").innerHTML="Korisnik "+ime+" "+prezime +" je uspjesno registriran sa sljedecim podatcima: <br> E-mail:" +email+"<br> Drzava:" +drzava+"<br> Grad:" +grad+"<br> Adresa na racunu:" +adrRacun+"<br> Adresa za dostavu:" +adrDostava;
+        }
+    </script>
+</head>
+<body>
+    <div class="w3-container w3-teal">
+        <nav class="navigacija">
+            <ul class="w3-bar w3-black">
+                <a href="index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="sve_ponude.html" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="http://localhost:2222/PHP/sve_ponude.php" class="w3-bar-item w3-button">ponude php</a></li>
+                <a href="kontakt.html" class="w3-bar-item w3-button">Kontakt</a></li>
+                <a href="registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+            </ul>
+        </nav>
+        <center>
+        <h1>Registracija novog korisnika</h1>
+        </center>
+        <p>Za registraciju novog korisnickog racuna molimo vas popunite obrazac registracije</p>
+
+        <div class="w3-container">
+            <form class="w3-teal">
+            <label for="">Unesite Vase Ime :</label>
+            <input type="Ime" name="" id="Ime" class="w3-input w3-border">
+            <label for="">Unesite Vase Prezime :</label>
+            <input type="Prezime" name="" id="Prezime" class="w3-input w3-border">
+            <label for="">Unesite Vasu E-mail adresu :</label>
+            <input type="Email" name="" id="Email" class="w3-input w3-border">
+            <label for="">Unesite Drzavu :</label>
+            <input type="Drzava" name="" id="Drzava" class="w3-input w3-border">
+            <label for="">Unesite Vas Grad i postanski broj :</label>
+            <input type="Grad" name="" id="Grad" class="w3-input w3-border">
+            <label for="">Unesite Vasu adresu za izdavanje racuna :</label>
+            <input type="AdrRacun" name="" id="AdrRacun" class="w3-input w3-border">
+            <label for="">Unesite Vasu adresu za dostavu :</label>
+            <input type="AdrDostava" name="" id="AdrDostava" class="w3-input w3-border">
+            <input type="button" value="Registriraj novog korisnika" class="w3-btn w3-black" onclick="posalji()">
+            </form>
+        </div>
+        <div></div>
+    <div id="NoviKorisnikUnos"></div>
+    <script>
+        document.write("<div class='w3-container w3-teal'>");
+        document.write("<i>Web-Shop mobiteli tm. by: Ivor Pangos  izradeno u sklopu kolegija Programiranje za internet</i>");
+        document.write("</div>");
+        ispisiPodatke();
+    </script>
+</body>
+</html>
