@@ -19,7 +19,7 @@ var dbConn = mysql.createConnection({
 dbConn.connect();
 
 app.get("/podatci", function(req,res){
-    return res.send({message:"ma bravo lipi moj "});
+    return res.send({message:"ma bravo "});
 });
 
 app.get("/podatci/:id", function(req,res){
