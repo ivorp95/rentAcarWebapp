@@ -37,3 +37,8 @@ alter table racunRentPZI add constraint VKvozila
 foreign key VKvozila(ID_vozila) references voziloRentPZI(ID_vozila) 
 on delete restrict on update cascade;
 
+
+
+select * from korisnikRentPZI;
+delete from korisnikRentPZI where ID_korisnika=1;
+

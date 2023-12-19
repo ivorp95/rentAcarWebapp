@@ -19,7 +19,7 @@ var dbConn = mysql.createConnection({
 dbConn.connect();
 
 app.get("/podatci", function(req,res){
-    return res.send({message:"ma bravo "});
+    return res.send({message:"uspjesno dohvaceni podatci "});
 });
 
 app.get("/podatci/:id", function(req,res){
@@ -33,54 +33,56 @@ app.post("/podatci", function(req,res){
     return res.send({message: podatci + " ok"});
 });
 
-app.get("/korisnik", function(req,res){
-    dbConn.query('SELECT * FROM korisnik_pzi', function (error, results, fields) {
+app.get("/korisnikRentPZI", function(req,res){
+    dbConn.query('SELECT * FROM korisnikRentPZI', function (error, results, fields) {
         if (error) throw error;
         return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
 });
 });
 
-app.get("/korisnik/:id", function(req,res){
+app.get("/korisnikRentPZI/:id", function(req,res){
     var id=req.params.id;
     if(!id){
         return res.status(400).send({ error: true, message: 'Krivi ID' });
     }
-    dbConn.query('SELECT * FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
+    dbConn.query('SELECT * FROM korisnikRentPZI WHERE ID_korisnika=? ', id , function (error, results, fields) {
     if (error) throw error;
     return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
 });
     //return res.send({message:"READ "+id});
 });
 
-app.post("/korisnik", function(req,res){
+
+// rentAcar registracija korisnika
+app.post("/korisnikRentPZI", function(req,res){
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
     var tel= req.body.podatak3;
-    dbConn.query('INSERT INTO korisnik_pzi(id,ime,prezime,tel) VALUES (null,?,?,?) ', [ime, prezime, tel] , function (error, results, fields) {
+    dbConn.query('INSERT INTO korisnikRentPZI(ID_korisnika,ime,prezime,brojMob) VALUES (null,?,?,?) ', [ime, prezime, tel] , function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'INSERT into Korisnici ime: '+ime+', prezime: '+prezime+', tel: '+tel });
+        return res.send({ error: false, data: results[0], message: 'INSERT into korisnikRentPZI ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
     });
     //return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
 });
 
-app.put("/korisnik/:id", function(req,res){
+app.put("/korisnikRentPZI/:id", function(req,res){
     var id=req.params.id;
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
     var tel= req.body.podatak3;
-    dbConn.query('UPDATE korisnik_pzi SET ime=? ,prezime=? ,tel=? WHERE id=? ', [ime, prezime, tel, id] , function (error, results, fields) {
+    dbConn.query('UPDATE korisnikRentPZI SET ime=? ,prezime=? ,brojMob=? WHERE ID_korisnika=? ', [ime, prezime, tel, id] , function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'UPDATE novi podatci ime: '+ime+', prezime: '+prezime+', tel: '+tel });
+        return res.send({ error: false, data: results[0], message: 'UPDATE novi podatci ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
     });
     //return res.send({message: "UPDATE "+id +" nova adresa:"+adr});
 });
 
-app.delete("/korisnik/:id",function(req,res){
+app.delete("/korisnikRentPZI/:id",function(req,res){
     var id=req.params.id;
     if(!id){
     return res.status(400).send({ error: true, message: 'Krivi ID' });
     }
-    dbConn.query('DELETE FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
+    dbConn.query('DELETE FROM korisnikRentPZI WHERE ID_korisnika=? ', id , function (error, results, fields) {
     if (error) throw error;
     return res.send({ error: false, data: results, message: 'DELETE from Korisnici where id=?' });
 });
