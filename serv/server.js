@@ -18,19 +18,19 @@ var dbConn = mysql.createConnection({
 
 dbConn.connect();
 
-app.get("/podatci", function(req,res){
-    return res.send({message:"uspjesno dohvaceni podatci "});
+app.get("/podaciRentPzi", function(req,res){
+    return res.send({message:"uspjesno dohvaceni podaci "});
 });
 
-app.get("/podatci/:id", function(req,res){
+app.get("/podaciRentPzi/:id", function(req,res){
     var id=req.params.id;
     id++;
     return res.send({message: id +" oki doki"});
 });
 
-app.post("/podatci", function(req,res){
-    var podatci = req.body.podatak;
-    return res.send({message: podatci + " ok"});
+app.post("/podaciRentPzi", function(req,res){
+    var podaci = req.body.podatak;
+    return res.send({message: podaci + " ok"});
 });
 
 app.get("/korisnikRentPZI", function(req,res){
@@ -72,7 +72,7 @@ app.put("/korisnikRentPZI/:id", function(req,res){
     var tel= req.body.podatak3;
     dbConn.query('UPDATE korisnikRentPZI SET ime=? ,prezime=? ,brojMob=? WHERE ID_korisnika=? ', [ime, prezime, tel, id] , function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'UPDATE novi podatci ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
+        return res.send({ error: false, data: results[0], message: 'UPDATE novi podaci ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
     });
     //return res.send({message: "UPDATE "+id +" nova adresa:"+adr});
 });
