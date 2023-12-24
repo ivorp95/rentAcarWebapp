@@ -39,9 +39,9 @@ Thumbs.db
 .vscode
 .dSYM
 ./img
-*.jpg
-*.jpeg
-*.png
+# *.jpg
+# *.jpeg
+# *.png 
 serv/node_modules
 /node_modules
 *.docx
