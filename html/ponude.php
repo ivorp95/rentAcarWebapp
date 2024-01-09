@@ -1,4 +1,4 @@
-
+<!-- Infinity  free hosting -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +16,7 @@
                 <a href="http://127.0.0.1:5501/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
                 <a href="http://localhost:2222/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
                 <a href="http://127.0.0.1:5501/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="http://localhost:2222/najam.php" class="w3-bar-item w3-button">Najam</a></li>
             </ul>
         </nav>
     </div>
