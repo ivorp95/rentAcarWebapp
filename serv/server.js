@@ -1,12 +1,14 @@
 var express = require('express');
 var app = express();
-
+var cors = require('cors');
+app.use(cors('localhost'));
 //const dbConfig = require("./db.config.js");
 var mysql = require('mysql');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
 
 var dbConn = mysql.createConnection({
     host: "ucka.veleri.hr",
@@ -55,9 +57,9 @@ app.get("/korisnikRentPZI/:id", function(req,res){
 
 // rentAcar registracija korisnika
 app.post("/korisnikRentPZI", function(req,res){
-    var ime = req.body.podatak1;
-    var prezime = req.body.podatak2;
-    var tel= req.body.podatak3;
+    var ime = req.body.ime;
+    var prezime = req.body.prezime;
+    var tel= req.body.tel;
     dbConn.query('INSERT INTO korisnikRentPZI(ID_korisnika,ime,prezime,brojMob) VALUES (null,?,?,?) ', [ime, prezime, tel] , function (error, results, fields) {
         if (error) throw error;
         return res.send({ error: false, data: results[0], message: 'INSERT into korisnikRentPZI ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
