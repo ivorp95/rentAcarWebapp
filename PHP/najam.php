@@ -11,21 +11,35 @@
 
     <script>
 
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, true );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
 function posalji(){
     let ime = document.getElementById("ime").value;
     let brojDana = document.getElementById("brojDana").value;
+    var idVozilo="<?php echo $_GET['idVozilo']; ?>";
 
-    let idVozilo=Document.getElementById("idVozila").value;
-
-    const httpRequest = new XMLHttpRequest();
+    /*const httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function(){
         if (httpRequest.readyState==4) {
             document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
         }
     }
+    */
+
+    var idKorisnik = httpGet("http://localhost:3000/korisnikRentPZIid?ime=?",ime);
+
+
     httpRequest.open("POST","http://localhost:3000/najamRentPZI/", true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+$idVozilo);
+    httpRequest.send("ime="+idKorisnik+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
+
+
 }
 </script>
 
@@ -48,15 +62,11 @@ function posalji(){
         $database = "ipangos";
         $username = "ipangos";
         $password = "11";
-    
+        $idVozilo=$_GET['idVozilo'];
+
         $conn = mysqli_connect($server, $username, $password, $database);
         $query = "SELECT * FROM voziloRentPZI WHERE ID_vozila=$_GET[idVozilo]";
         $res = mysqli_query($conn, $query);
-
-        $idVozilo=$_GET['idVozilo'];
-
-
-
         //$idKorinik=$_GET['idKorisnik'];
 
     ?>
@@ -77,7 +87,6 @@ function posalji(){
         <?php
             while($row = mysqli_fetch_assoc($res)){
                 echo "<tr>";
-                echo "let idVozilo=".$row["ID_vozila"];
                 echo "<td>".$row ["registracija"]."</td>";
                 echo "<td>".$row ["proizvodac"]."</td>";
                 echo "<td>".$row ["model"]."</td>";
