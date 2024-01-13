@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rent-a-caR</title>
-    <link rel="stylesheet" href="../CSS/style_web-shop.css"-->
+    <link rel="stylesheet" href="http://127.0.0.1:5501/CSS/style_web-shop.css"-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
 </head>
 <body>
@@ -16,7 +16,7 @@
                 <a href="http://127.0.0.1:5501/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
                 <a href="http://localhost:2222/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
                 <a href="http://127.0.0.1:5501/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
-                <a href="http://localhost:2222/najam.php" class="w3-bar-item w3-button">Najam</a></li>
+                <!--a href="http://localhost:2222/najam.php" class="w3-bar-item w3-button">Najam</a></li-->
             </ul>
         </nav>
     </div>
@@ -32,6 +32,9 @@
         $conn = mysqli_connect($server, $username, $password, $database);
         $query = "SELECT * FROM voziloRentPZI";
         $res = mysqli_query($conn, $query);
+
+       // $idVozilo=$_GET['idVozilo'];
+        //$idKorinik=$_GET['idKorisnik'];
     ?>
     </center>
     <div>Popis vozila za najam:
@@ -56,7 +59,7 @@
                 echo "<td>".$row ["tipGoriva"]."</td>";
                 echo "<td><img src='".$row["slika"]."' width='300px' alt='" ."'></td>";
                 echo "<td>".$row ["opis"]."</td>";
-                echo "<td><a href='http://localhost:2222/najam.php' target='_self'>NAJAM</a></td>";
+                echo "<td><a href='http://localhost:2222/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>
