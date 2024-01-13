@@ -21,7 +21,7 @@
         </nav>
     </div>
     <center>
-    <h1>WEB-SHOP - SVA PONUDA</h1>
+    <h1>RENT A CAR</h1>
     <p></p>
     <?php
         $server = "ucka.veleri.hr:3306";
@@ -37,8 +37,6 @@
     <div>Popis vozila za najam:
     <table border="2px">
             
-            
-            <th>Registracija</th>
             <th>Proizvodjac</th>
             <th>Model</th>
             <th>Godiste</th>
@@ -46,11 +44,11 @@
             <th>Tip Goriva</th>
             <th>Slika</th>
             <th>Opis</th>
+            <th></th>
             </tr>
         <?php
             while($row = mysqli_fetch_assoc($res)){
                 echo "<tr>";
-                echo "<td>".$row ["registracija"]."</td>";
                 echo "<td>".$row ["proizvodac"]."</td>";
                 echo "<td>".$row ["model"]."</td>";
                 echo "<td>".$row ["godiste"]."</td>";
@@ -58,6 +56,7 @@
                 echo "<td>".$row ["tipGoriva"]."</td>";
                 echo "<td><img src='".$row["slika"]."' width='300px' alt='" ."'></td>";
                 echo "<td>".$row ["opis"]."</td>";
+                echo "<td><a href='http://localhost:2222/najam.php' target='_self'>NAJAM</a></td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>
@@ -65,3 +64,5 @@
     
 </body>
 </html>
+
+<!--a href="http://localhost:2222/najam.php" target="_self">Vise</a-->
