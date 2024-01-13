@@ -67,6 +67,18 @@ app.post("/korisnikRentPZI", function(req,res){
     //return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
 });
 
+// rentAcar najam vozila unos u bazu u agregacijsku tablicu
+app.post("/najamRentPZI", function(req,res){
+    var ime = req.body.ime;
+    var brojDana = req.body.brojDana;
+    var idVozilo=req.body.idVozilo;
+    dbConn.query('INSERT INTO racunRentPZI(ID_korisnika, ID_vozila, brojDanaUNajmu) VALUES (?,?,?) ', [ime,idVozilo, brojDana] , function (error, results, fields) {
+        if (error) throw error;
+        //return res.send({ error: false, data: results[0], message: 'INSERT into korisnikRentPZI ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
+    });
+    //return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
+});
+
 app.put("/korisnikRentPZI/:id", function(req,res){
     var id=req.params.id;
     var ime = req.body.podatak1;

@@ -8,6 +8,27 @@
     <title>Rent-a-caR</title>
     <link rel="stylesheet" href="http://127.0.0.1:5501/CSS/style_web-shop.css"-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
+
+    <script>
+
+function posalji(){
+    let ime = document.getElementById("ime").value;
+    let brojDana = document.getElementById("brojDana").value;
+
+    let idVozilo=Document.getElementById("idVozila").value;
+
+    const httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function(){
+        if (httpRequest.readyState==4) {
+            document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
+        }
+    }
+    httpRequest.open("POST","http://localhost:3000/najamRentPZI/", true);
+    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+$idVozilo);
+}
+</script>
+
 </head>
 <body>
 <div class="w3-container w3-teal">
@@ -21,7 +42,7 @@
         </nav>
     </div>
     <center>
-    <h1 class="w3-container w3-teal">WEB-SHOP - SVA PONUDA</h1>
+    <h1 class="w3-container w3-teal">OBRAZAC NARUDZBE VOZILA</h1>
     <?php
         $server = "ucka.veleri.hr:3306";
         $database = "ipangos";
@@ -33,10 +54,14 @@
         $res = mysqli_query($conn, $query);
 
         $idVozilo=$_GET['idVozilo'];
-       // $idKorinik=$_GET['idKorisnik'];
+
+
+
+        //$idKorinik=$_GET['idKorisnik'];
+
     ?>
     </center>
-    <div class="w3-container w3-teal">Popis vozila za najam:
+    <div>Vase odabrano vozilo za najam, molimo popunite obrazac za dovrsetak narudzbe :
     <table border="2px">
             
             
@@ -52,6 +77,7 @@
         <?php
             while($row = mysqli_fetch_assoc($res)){
                 echo "<tr>";
+                echo "let idVozilo=".$row["ID_vozila"];
                 echo "<td>".$row ["registracija"]."</td>";
                 echo "<td>".$row ["proizvodac"]."</td>";
                 echo "<td>".$row ["model"]."</td>";
@@ -64,6 +90,17 @@
             }mysqli_close($conn);
         ?>
     </div>
-    
+
+    <div class="w3-container w3-teal">
+        <center>
+        <form class="w3-teal">
+        <label for="">Unesite vase Ime:</label>
+        <input type="text" name="" id="ime" class="w3-input w3-border">
+        <label for="">Broj dana koliko zelite unajmiti vozilo:</label>
+        <input type="text" name="" id="brojDana" class="w3-input w3-border">
+        <input type="button" value="Unajmi vozilo" class="w3-btn w3-black" onclick="posalji()"><br>
+        </form>
+    </center>
+    </div>
 </body>
 </html>
