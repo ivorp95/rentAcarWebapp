@@ -68,3 +68,24 @@ on delete restrict on update cascade;
 select * from korisnikRentPZI;
 delete from korisnikRentPZI where ID_korisnika=1;
 
+
+
+drop table racunRentPZI ;
+describe racunRentPZI ;
+
+
+
+
+
+
+CREATE TABLE racunRentPZI (
+  ime varchar(50) ,
+  ID_vozila int(5),
+  cijenaPoDanu int(5) ,
+  brojDanaUNajmu int(5),
+  ukupnaCijena int(10)
+);
+
+
+
+

@@ -24,20 +24,19 @@ function posalji(){
     let brojDana = document.getElementById("brojDana").value;
     var idVozilo="<?php echo $_GET['idVozilo']; ?>";
 
-    /*const httpRequest = new XMLHttpRequest();
+    const httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function(){
         if (httpRequest.readyState==4) {
             document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
         }
     }
-    */
 
-    var idKorisnik = httpGet("http://localhost:3000/korisnikRentPZIid?ime=?",ime);
+    
 
 
     httpRequest.open("POST","http://localhost:3000/najamRentPZI/", true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    httpRequest.send("ime="+idKorisnik+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
+    httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
 
 
 }
@@ -111,5 +110,6 @@ function posalji(){
         </form>
     </center>
     </div>
+    <div id="korisnik_unos"></div>
 </body>
 </html>

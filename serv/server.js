@@ -69,10 +69,10 @@ app.post("/korisnikRentPZI", function(req,res){
 
 // rentAcar najam vozila unos u bazu u agregacijsku tablicu
 app.post("/najamRentPZI", function(req,res){
-    var idKorisnik = req.body.idKorisnik;
+    var ime = req.body.ime;
     var brojDana = req.body.brojDana;
     var idVozilo=req.body.idVozilo;
-    dbConn.query('INSERT INTO racunRentPZI(ID_korisnika, ID_vozila, brojDanaUNajmu) VALUES (?,?,?) ', [idKorisnik,idVozilo, brojDana] , function (error, results, fields) {
+    dbConn.query('INSERT INTO racunRentPZI(ime, ID_vozila, brojDanaUNajmu) VALUES (?,?,?,?) ', [ime,idVozilo, brojDana] , function (error, results, fields) {
         if (error) throw error;
         //return res.send({ error: false, data: results[0], message: 'INSERT into korisnikRentPZI ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
     });
@@ -80,9 +80,18 @@ app.post("/najamRentPZI", function(req,res){
 });
 
 
+
+
+
+
+
+
+
+
+
 app.get("/korisnikRentPZIid", function(req,res){
     var ime = req.body.ime;
-    dbConn.query('SELECT ID_korisnika FROM korisnikRentPZI WHERE ime=?',ime, function (error, results, fields) {
+    dbConn.query('SELECT ID_korisnika FROM korisnikRentPZI WHERE ime=? ', ime , function (error, results, fields) {
         if (error) throw error;
         return res.send({data: results});
 });
