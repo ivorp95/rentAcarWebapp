@@ -70,7 +70,7 @@
             <th>Model</th>
             <th>Godiste</th>
             <th>Cijena po danu</th>
-            <th>Tip Goriva</th>
+            <th>Registracija</th>
             <th>Slika</th>
             <th></th>
             <!--th></th-->
@@ -85,7 +85,7 @@
                 echo "<td>".$row ["model"]."</td>";
                 echo "<td>".$row ["godiste"]."</td>";
                 echo "<td>".$row ["cijenaPodanu"]."</td>";
-                echo "<td>".$row ["tipGoriva"]."</td>";
+                echo "<td>".$row ["registracija"]."</td>";
                 echo "<td><img src='".$row["slika"]."' width='300px' alt='" ."'></td>";
                 //echo "<td>".$row ["opis"]."</td>";
                 //echo "<td><a href=''".$row ["ID_vozila"]."' target='_self'>OBRISI</a></td>";
