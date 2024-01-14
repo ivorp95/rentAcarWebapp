@@ -20,44 +20,6 @@ var dbConn = mysql.createConnection({
 
 dbConn.connect();
 
-app.get("/podaciRentPzi", function(req,res){
-    return res.send({message:"uspjesno dohvaceni podaci "});
-});
-
-app.get("/podaciRentPzi/:id", function(req,res){
-    var id=req.params.id;
-    id++;
-    return res.send({message: id +" oki doki"});
-});
-
-app.post("/podaciRentPzi", function(req,res){
-    var podaci = req.body.podatak;
-    return res.send({message: podaci + " ok"});
-});
-
-app.get("/korisnikRentPZI", function(req,res){
-    dbConn.query('SELECT * FROM korisnikRentPZI', function (error, results, fields) {
-        if (error) throw error;
-        return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
-});
-});
-
-app.get("/korisnikRentPZI/:id", function(req,res){
-    var id=req.params.id;
-    if(!id){
-        return res.status(400).send({ error: true, message: 'Krivi ID' });
-    }
-    dbConn.query('SELECT * FROM korisnikRentPZI WHERE ID_korisnika=?', id , function (error, results, fields) {
-    if (error) throw error;
-    return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
-});
-    //return res.send({message:"READ "+id});
-});
-
-
-
-
-
 
 
 // rentAcar registracija korisnika
@@ -83,12 +45,6 @@ app.post("/najamRentPZI", function(req,res){
     });
     //return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
 });
-
-
-
-
-
-
 
 
 
@@ -122,14 +78,6 @@ app.put("/racunRentPZIupdate", function(req,res){
 
 
 
-
-
-
-
-
-
-
-
 // brisanje racuna iz tablice preko ID_vozila
 
 
@@ -148,15 +96,44 @@ app.post("/racunRentPZIobrisi",function(req,res){
 
 
 
-
-
-
-
-
-
 // set port
 app.listen(3000, function () {
     console.log('Node app is running on port 3000');
 });
 
 //node server, pokrece pozicioniranjem na web servise      node server.js       u terminalu
+
+
+app.get("/podaciRentPzi", function(req,res){
+    return res.send({message:"uspjesno dohvaceni podaci "});
+});
+
+app.get("/podaciRentPzi/:id", function(req,res){
+    var id=req.params.id;
+    id++;
+    return res.send({message: id +" oki doki"});
+});
+
+app.post("/podaciRentPzi", function(req,res){
+    var podaci = req.body.podatak;
+    return res.send({message: podaci + " ok"});
+});
+
+app.get("/korisnikRentPZI", function(req,res){
+    dbConn.query('SELECT * FROM korisnikRentPZI', function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
+});
+});
+
+app.get("/korisnikRentPZI/:id", function(req,res){
+    var id=req.params.id;
+    if(!id){
+        return res.status(400).send({ error: true, message: 'Krivi ID' });
+    }
+    dbConn.query('SELECT * FROM korisnikRentPZI WHERE ID_korisnika=?', id , function (error, results, fields) {
+    if (error) throw error;
+    return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
+});
+    //return res.send({message:"READ "+id});
+});

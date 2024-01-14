@@ -1,5 +1,11 @@
 <!-- Infinity  free hosting -->
 
+<!-- http server macos- http://127.0.0.1:5501   vscode plugin -->
+<!-- php server macos- http://localhost:2222    php folder CLI naredba-  php -S localhost:2022 -->
+<!-- AJAX server macos- http://localhost:3000   serv folder CLI naredba-     nodemon server.js -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +48,7 @@ function posalji(){
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send();
 
-    var myWindow = window.open("http://localhost:2222/racun.php", "");
+    var myWindow = window.open("http://localhost:2222/racun.php", "_self");
     }
 </script>
 
