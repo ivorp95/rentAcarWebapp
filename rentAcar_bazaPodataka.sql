@@ -33,6 +33,19 @@ insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, 
 Doživite Porscheov genetski kod u njegovom najčišćem obliku. Tipične Porsche performanse generira 3-litreni biturbo boxerski 6-cilindarski motor s 283 kW (385 KS) snage i 450 Nm okretnog momenta.
 ');
 
+insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, cijenaPodanu, tipGoriva, slika, opis) values 
+(7,'RI2345F','Lamborghini', 'Huracan', '2018', 700, 'Benzin', 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/hero-banner/huracan/11_18_sto_lancio/Huracan_STO.png','Talijanski je proizvođač 2018. godine predstavio verziju staze Lamborghini Huracan LP640-4 Performante svijetu automobilista.
+Ispod poklopca motora novitet dobiva atmosferski benzinski motor, koji je nakon određene modernizacije povećao snagu za 30 KS., 7-stupanjski robotski mjenjač, ​​
+koji je već poznat za ovaj segment sportskih automobila, radi zajedno s jedinicom.'),
+
+(8,'RI666XX','McLaren','P1','2022',900,'Hibridni','https://www.guncelarabalar.com/wp-content/uploads/2022/06/P1.png','McLaren P1 je super sportski automobil sa više od 900 konjskih snaga, ubrzanje od samo 2,8 sekundi na 100 kilometara.
+Automobil će biti pogonjen 3.8-litarskim V8 motorom sa maksimalnom snagom od 737 konjskih snaga i dodatnih 179 konjskih snaga kroz KERS-ov sistem za obnovu kinetičke energije koji se već koristi na F1 utrkama.
+'),
+
+(9,'RI2319RR','Ferrari','458 Italia','2016',400,'Benzin','https://picolio.auto123.com/16photo/ferrari/2016-ferrari-458-italia-speciale.png','Speciale je najaerodinamičniji cestovni Ferrari - ima posebno razvijena prednja i stražnja pokretna krilca, koja se automatski prilagođavaju te smanjuju otpor zraka i potisak prema tlu.
+Ferrarijev 4,5-litreni V8 motor osnažen je sa 570 KS na 605 KS');
+
+
 
 
 
@@ -73,5 +86,15 @@ CREATE TABLE racunRentPZI (
 );
 
 UPDATE racunRentPZI SET ukupnaCijena=brojDanaUNajmu * (SELECT cijenaPodanu from voziloRentPZI WHERE racunRentPZI.ID_vozila=voziloRentPZI.ID_vozila);
+INSERT INTO racunRentPZI(ime, ID_vozila, brojDanaUNajmu) VALUES ('jakov','5','8');
+
+SELECT * FROM racunRentPZI LEFT OUTER JOIN voziloRentPZI on voziloRentPZI.ID_vozila=racunRentPZI.ID_vozila WHERE ime='ivor';
+
+
+DELETE  FROM racunRentPZI WHERE ID_vozila=1;
+
+
+
+
 
 

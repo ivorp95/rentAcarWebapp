@@ -63,9 +63,9 @@
     </center>
     <div>ISPIS RACUNA
     <table border="2px">
-            <th>Kupac</th>
+            <th>Korisnik vozila</th>
             <th>Dana u najmu</th>
-            <th>Ukupno za platiti EUR</th>
+            <th>Ukupno EUR</th>
             <th>Proizvodjac</th>
             <th>Model</th>
             <th>Godiste</th>
