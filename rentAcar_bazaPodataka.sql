@@ -45,19 +45,6 @@ brojMob varchar(30)
 );
 
 
-create table racunRentPZI (
-ID_korisnika int(5),
-ID_vozila int(5),
-brojDanaUNajmu int(5),
-);
-alter table racunRentPZI add ukupnaCijena int(10);
-alter table racunRentPZI drop cijenaPodanu;
-
-alter table racunRentPZI add primary key (ID_korisnika,ID_vozila);
-
-alter table racunRentPZI add constraint VKkorisnika 
-foreign key VKkorisnika(ID_korisnika) references korisnikRentPZI(ID_korisnika) 
-on delete restrict on update cascade;
 
 alter table racunRentPZI add constraint VKvozila 
 foreign key VKvozila(ID_vozila) references voziloRentPZI(ID_vozila) 
@@ -74,14 +61,13 @@ drop table racunRentPZI ;
 describe racunRentPZI ;
 
 
-
+alter table racunRentPZI drop cijenaPoDanu;
 
 
 
 CREATE TABLE racunRentPZI (
   ime varchar(50) ,
   ID_vozila int(5),
-  cijenaPoDanu int(5) ,
   brojDanaUNajmu int(5),
   ukupnaCijena int(10)
 );

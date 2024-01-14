@@ -72,7 +72,7 @@ app.post("/najamRentPZI", function(req,res){
     var ime = req.body.ime;
     var brojDana = req.body.brojDana;
     var idVozilo=req.body.idVozilo;
-    dbConn.query('INSERT INTO racunRentPZI(ime, ID_vozila, brojDanaUNajmu) VALUES (?,?,?,?) ', [ime,idVozilo, brojDana] , function (error, results, fields) {
+    dbConn.query('INSERT INTO racunRentPZI(ime, ID_vozila, brojDanaUNajmu) VALUES (?,?,?) ', [ime,idVozilo, brojDana] , function (error, results, fields) {
         if (error) throw error;
         //return res.send({ error: false, data: results[0], message: 'INSERT into korisnikRentPZI ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
     });
