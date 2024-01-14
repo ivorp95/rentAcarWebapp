@@ -28,7 +28,7 @@
         $database = "ipangos";
         $username = "ipangos";
         $password = "11";
-        $idVozilo=$_GET['idVozilo'];
+        //$idVozilo=$_GET['idVozilo'];
 
 
         $conn = mysqli_connect($server, $username, $password, $database);

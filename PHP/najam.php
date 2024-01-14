@@ -28,8 +28,23 @@ function posalji(){
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
 
-    httpRequest.open("PUT","http://localhost:3000/racunRentPZIupdate/", true);
+    //httpRequest.open("PUT","http://localhost:3000/racunRentPZIupdate/", true);
 }
+    function posaljiRacun(){
+        var idVozilo="<?php echo $_GET['idVozilo']; ?>";
+
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function(){
+        if (httpRequest.readyState==4) {
+            document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
+        }
+    }
+    httpRequest.open("PUT","http://localhost:3000/racunRentPZIupdate/", true);
+    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    httpRequest.send();
+
+    var myWindow = window.open("http://localhost:2222/racun.php", "");
+    }
 </script>
 
 </head>
@@ -97,7 +112,7 @@ function posalji(){
         <label for="">Broj dana koliko zelite unajmiti vozilo:</label>
         <input type="text" name="" id="brojDana" class="w3-input w3-border">
         <input type="button" value="Unajmi vozilo" class="w3-btn w3-black" onclick="posalji()"><br>
-        <a href='http://localhost:2222/racun.php?idVozilo='+idVozilo target='_self'>ispisi racun</a>
+        <input type="button" value="Ispis Racuna" class="w3-btn w3-black" onclick="posaljiRacun()"><br>
         </form>
     </center>
     </div>
