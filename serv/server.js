@@ -105,17 +105,28 @@ app.get("/korisnikRentPZIid", function(req,res){
 
 
 
-app.put("/korisnikRentPZI/:id", function(req,res){
-    var id=req.params.id;
-    var ime = req.body.podatak1;
-    var prezime = req.body.podatak2;
-    var tel= req.body.podatak3;
-    dbConn.query('UPDATE korisnikRentPZI SET ime=? ,prezime=? ,brojMob=? WHERE ID_korisnika=? ', [ime, prezime, tel, id] , function (error, results, fields) {
+app.put("/racunRentPZIupdate", function(req,res){
+    dbConn.query('UPDATE racunRentPZI SET ukupnaCijena=brojDanaUNajmu * (SELECT cijenaPodanu from voziloRentPZI WHERE racunRentPZI.ID_vozila=voziloRentPZI.ID_vozila);' , function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'UPDATE novi podaci ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
+        //return res.send({ error: false, data: results[0], message: 'UPDATE novi podaci ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
     });
     //return res.send({message: "UPDATE "+id +" nova adresa:"+adr});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.delete("/korisnikRentPZI/:id",function(req,res){
     var id=req.params.id;

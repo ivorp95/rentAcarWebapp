@@ -24,14 +24,11 @@ function posalji(){
         }
     }
 
-    
-
-
     httpRequest.open("POST","http://localhost:3000/najamRentPZI/", true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
 
-
+    httpRequest.open("PUT","http://localhost:3000/racunRentPZIupdate/", true);
 }
 </script>
 
@@ -100,6 +97,7 @@ function posalji(){
         <label for="">Broj dana koliko zelite unajmiti vozilo:</label>
         <input type="text" name="" id="brojDana" class="w3-input w3-border">
         <input type="button" value="Unajmi vozilo" class="w3-btn w3-black" onclick="posalji()"><br>
+        <a href='http://localhost:2222/racun.php?idVozilo='+idVozilo target='_self'>ispisi racun</a>
         </form>
     </center>
     </div>
