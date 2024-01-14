@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="http://127.0.0.1:5501/CSS/style_web-shop.css"-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
 
-
     <script>
+    //funkcija za brisanje stavke racuna na koju kliknemo, brisu se podaci iz tablice racun za idVozila koji se poslje funkciji
+    // POST ajax metoda dobiva verijablu 'a' kroz parametar funkcije
         function obrisi(a){
 
         const httpRequest = new XMLHttpRequest();
@@ -88,7 +89,8 @@
                 echo "<td>".$row ["registracija"]."</td>";
                 echo "<td><img src='".$row["slika"]."' width='300px' alt='" ."'></td>";
                 //echo "<td>".$row ["opis"]."</td>";
-                //echo "<td><a href=''".$row ["ID_vozila"]."' target='_self'>OBRISI</a></td>";
+                //slicno kao kod pounde.php, dobiveni podatak ID_vozila saljemo kao parametar funkciji obrisi preko gumba 
+                //brise se onaj redak na koji se klikne i dobije ID_vozila
                 echo "<td><input type='button' value='OBRISI' class='w3-btn w3-black' onclick='obrisi(".$row ["ID_vozila"].")'><br></td>";
                 echo "</tr>";
             }mysqli_close($conn);

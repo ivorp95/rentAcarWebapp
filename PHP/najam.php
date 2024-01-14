@@ -17,7 +17,7 @@
 
     <script>
 
-
+//funkcija za gumb unajmi salje Insert AJAX zahtjev sa varijablama za unos u bazu
 function posalji(){
     let ime = document.getElementById("ime").value;
     let brojDana = document.getElementById("brojDana").value;
@@ -35,6 +35,8 @@ function posalji(){
     httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
 
 }
+
+//funkcija za gumb poslji racun salje Update AJAX zahtjev koji racuna ukupnu cijenu nakon unosa broja dana i otvara novi prozor - racun.php
     function posaljiRacun(){
         var idVozilo="<?php echo $_GET['idVozilo']; ?>";
 

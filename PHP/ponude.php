@@ -61,6 +61,8 @@
                 echo "<td>".$row ["tipGoriva"]."</td>";
                 echo "<td><img src='".$row["slika"]."' width='300px' alt='" ."'></td>";
                 echo "<td>".$row ["opis"]."</td>";
+                //gumb NAJAM punimo sa href link na novi 'najam.php?idVozilo=?' php prozor, odgovor iz baze za svaki redak dajemo kao =? parametar linka, 
+                //tako otvaramo novi prozor za svaki odabrani auto samo sa podacima koji odgovaraju tom ID vozila
                 echo "<td><a href='http://localhost:2222/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
                 echo "</tr>";
             }mysqli_close($conn);
@@ -70,4 +72,3 @@
 </body>
 </html>
 
-<!--a href="http://localhost:2222/najam.php" target="_self">Vise</a-->
