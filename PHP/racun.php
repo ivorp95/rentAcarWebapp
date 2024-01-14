@@ -47,7 +47,6 @@
         $database = "ipangos";
         $username = "ipangos";
         $password = "11";
-        //$idVozilo=$_GET['idVozilo'];
 
 
         $conn = mysqli_connect($server, $username, $password, $database);
@@ -93,5 +92,3 @@
     <div id="korisnik_unos"></div>
 </body>
 </html>
-
-<!--a href="http://localhost:2222/najam.php" target="_self">Vise</a-->

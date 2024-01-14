@@ -28,7 +28,6 @@ function posalji(){
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
 
-    //httpRequest.open("PUT","http://localhost:3000/racunRentPZIupdate/", true);
 }
     function posaljiRacun(){
         var idVozilo="<?php echo $_GET['idVozilo']; ?>";
