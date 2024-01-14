@@ -8,6 +8,25 @@
     <title>Rent-a-caR</title>
     <link rel="stylesheet" href="http://127.0.0.1:5501/CSS/style_web-shop.css"-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
+
+
+    <script>
+        function obrisi(a){
+
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function(){
+        if (httpRequest.readyState==4) {
+        document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
+        }
+    }
+    httpRequest.open("POST","http://localhost:3000/racunRentPZIobrisi", true);
+    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    httpRequest.send("id="+a);
+
+    }
+    </script>
+
+
 </head>
 <body>
 <div class="w3-container w3-teal">
@@ -49,7 +68,7 @@
             <th>Cijena po danu</th>
             <th>Tip Goriva</th>
             <th>Slika</th>
-            <th>Obrisi</th>
+            <th></th>
             <!--th></th-->
             </tr>
         <?php
@@ -65,13 +84,13 @@
                 echo "<td>".$row ["tipGoriva"]."</td>";
                 echo "<td><img src='".$row["slika"]."' width='300px' alt='" ."'></td>";
                 //echo "<td>".$row ["opis"]."</td>";
-                //echo "<td><a href='http://localhost:2222/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
-                echo "<td><button class='delete' data-target='http://localhost:3000//korisnikRentPZIobrisi/:".$row ["ID_vozila"]."' data-method='DELETE' data-disabled='true'>OBRISI</button></td>";
+                //echo "<td><a href=''".$row ["ID_vozila"]."' target='_self'>OBRISI</a></td>";
+                echo "<td><input type='button' value='OBRISI' class='w3-btn w3-black' onclick='obrisi(".$row ["ID_vozila"].")'><br></td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>
     </div>
-    
+    <div id="korisnik_unos"></div>
 </body>
 </html>
 
