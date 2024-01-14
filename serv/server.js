@@ -108,7 +108,7 @@ app.get("/korisnikRentPZIid", function(req,res){
 
 
 
-
+//UPDATE tablice nakon unosa novog racuna da se izracuna ukupna cijena
 
 app.put("/racunRentPZIupdate", function(req,res){
     dbConn.query('UPDATE racunRentPZI SET ukupnaCijena=brojDanaUNajmu * (SELECT cijenaPodanu from voziloRentPZI WHERE racunRentPZI.ID_vozila=voziloRentPZI.ID_vozila);' , function (error, results, fields) {
@@ -130,7 +130,7 @@ app.put("/racunRentPZIupdate", function(req,res){
 
 
 
-
+// brisanje racuna iz tablice preko ID_vozila
 
 
 app.post("/racunRentPZIobrisi",function(req,res){
