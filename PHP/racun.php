@@ -49,8 +49,8 @@
             <th>Cijena po danu</th>
             <th>Tip Goriva</th>
             <th>Slika</th>
-            <!--th>Opis</th>
-            <th></th-->
+            <th>Obrisi</th>
+            <!--th></th-->
             </tr>
         <?php
             while($row = mysqli_fetch_assoc($res)){
@@ -66,6 +66,7 @@
                 echo "<td><img src='".$row["slika"]."' width='300px' alt='" ."'></td>";
                 //echo "<td>".$row ["opis"]."</td>";
                 //echo "<td><a href='http://localhost:2222/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
+                echo "<td><button class='delete' data-target='http://localhost:3000//korisnikRentPZIobrisi/:".$row ["ID_vozila"]."' data-method='DELETE' data-disabled='true'>OBRISI</button></td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>

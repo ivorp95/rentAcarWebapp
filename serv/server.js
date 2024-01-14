@@ -128,14 +128,14 @@ app.put("/racunRentPZIupdate", function(req,res){
 
 
 
-app.delete("/korisnikRentPZI/:id",function(req,res){
+app.delete("/korisnikRentPZIobrisi/:id",function(req,res){
     var id=req.params.id;
     if(!id){
     return res.status(400).send({ error: true, message: 'Krivi ID' });
     }
-    dbConn.query('DELETE FROM korisnikRentPZI WHERE ID_korisnika=? ', id , function (error, results, fields) {
+    dbConn.query('DELETE FROM racunRentPZI WHERE ID_vozila=? ', id , function (error, results, fields) {
     if (error) throw error;
-    return res.send({ error: false, data: results, message: 'DELETE from Korisnici where id=?' });
+    //return res.send({ error: false, data: results, message: 'DELETE from Korisnici where id=?' });
 });
 
    // return res.send({message: "DELETE " +id});
