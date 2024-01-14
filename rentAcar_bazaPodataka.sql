@@ -72,6 +72,6 @@ CREATE TABLE racunRentPZI (
   ukupnaCijena int(10)
 );
 
-
+UPDATE racunRentPZI SET ukupnaCijena=brojDanaUNajmu * (SELECT cijenaPodanu from voziloRentPZI WHERE racunRentPZI.ID_vozila=voziloRentPZI.ID_vozila);
 
 

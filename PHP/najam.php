@@ -11,13 +11,6 @@
 
     <script>
 
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, true );
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
 
 function posalji(){
     let ime = document.getElementById("ime").value;
