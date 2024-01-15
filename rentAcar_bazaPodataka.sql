@@ -13,6 +13,42 @@ alter table voziloRentPZI change opis opis varchar(1000);
 alter table voziloRentPZI change model model varchar(100);
 alter table voziloRentPZI add opis varchar(300);
 
+
+
+
+
+create table korisnikRentPZI (
+ID_korisnika int(5) primary key auto_increment,
+ime varchar(30),
+prezime varchar(50),
+brojMob varchar(30)
+);
+
+
+
+alter table racunRentPZI add constraint VKvozila 
+foreign key VKvozila(ID_vozila) references voziloRentPZI(ID_vozila) 
+on delete restrict on update cascade;
+
+
+
+
+CREATE TABLE racunRentPZI (
+  ime varchar(50) ,
+  ID_vozila int(5),
+  brojDanaUNajmu int(5),
+  ukupnaCijena int(10)
+);
+
+UPDATE racunRentPZI SET ukupnaCijena=brojDanaUNajmu * (SELECT cijenaPodanu from voziloRentPZI WHERE racunRentPZI.ID_vozila=voziloRentPZI.ID_vozila);
+
+
+SELECT * FROM racunRentPZI LEFT OUTER JOIN voziloRentPZI on voziloRentPZI.ID_vozila=racunRentPZI.ID_vozila WHERE ime='ivor';
+
+
+
+
+
 insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, cijenaPodanu, tipGoriva, slika, opis) values 
 (1,'RI345PP','Maseratti', 'MC20', '2022', 150, 'Benzin', 'https://banner2.cleanpng.com/20180328/vpq/kisspng-2012-bentley-continental-gtc-2018-bentley-continen-bentley-5abb4dfd896532.3899968215222246375628.jpg','Novi MC20 Cielo vozi u pratnji novog V6 Nettuno motora koji je debitirao u MC20 2020.
 Upravo predstavljeni MC20 Cielo nudi savršenu mješavinu sportskog duha i luksuza zahvaljujući
@@ -44,55 +80,6 @@ Automobil će biti pogonjen 3.8-litarskim V8 motorom sa maksimalnom snagom od 73
 '),
 (9,'RI2319RR','Ferrari','458 Italia','2016',400,'Benzin','https://picolio.auto123.com/16photo/ferrari/2016-ferrari-458-italia-speciale.png','Speciale je najaerodinamičniji cestovni Ferrari - ima posebno razvijena prednja i stražnja pokretna krilca, koja se automatski prilagođavaju te smanjuju otpor zraka i potisak prema tlu.
 Ferrarijev 4,5-litreni V8 motor osnažen je sa 570 KS na 605 KS');
-
-
-
-
-
-
-create table korisnikRentPZI (
-ID_korisnika int(5) primary key auto_increment,
-ime varchar(30),
-prezime varchar(50),
-brojMob varchar(30)
-);
-
-
-
-alter table racunRentPZI add constraint VKvozila 
-foreign key VKvozila(ID_vozila) references voziloRentPZI(ID_vozila) 
-on delete restrict on update cascade;
-
-
-
-select * from korisnikRentPZI;
-delete from korisnikRentPZI where ID_korisnika=1;
-
-
-
-drop table racunRentPZI ;
-describe racunRentPZI ;
-
-
-alter table racunRentPZI drop cijenaPoDanu;
-
-
-
-CREATE TABLE racunRentPZI (
-  ime varchar(50) ,
-  ID_vozila int(5),
-  brojDanaUNajmu int(5),
-  ukupnaCijena int(10)
-);
-
-UPDATE racunRentPZI SET ukupnaCijena=brojDanaUNajmu * (SELECT cijenaPodanu from voziloRentPZI WHERE racunRentPZI.ID_vozila=voziloRentPZI.ID_vozila);
-INSERT INTO racunRentPZI(ime, ID_vozila, brojDanaUNajmu) VALUES ('jakov','5','8');
-
-SELECT * FROM racunRentPZI LEFT OUTER JOIN voziloRentPZI on voziloRentPZI.ID_vozila=racunRentPZI.ID_vozila WHERE ime='ivor';
-
-
-DELETE  FROM racunRentPZI WHERE ID_vozila=1;
-
 
 
 
