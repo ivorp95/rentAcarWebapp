@@ -25,6 +25,12 @@ brojMob varchar(30)
 );
 
 
+CREATE TABLE racunRentPZI (
+  ime varchar(50) ,
+  ID_vozila int(5),
+  brojDanaUNajmu int(5),
+  ukupnaCijena int(10)
+);
 
 alter table racunRentPZI add constraint VKvozila 
 foreign key VKvozila(ID_vozila) references voziloRentPZI(ID_vozila) 
@@ -33,12 +39,6 @@ on delete restrict on update cascade;
 
 
 
-CREATE TABLE racunRentPZI (
-  ime varchar(50) ,
-  ID_vozila int(5),
-  brojDanaUNajmu int(5),
-  ukupnaCijena int(10)
-);
 
 UPDATE racunRentPZI SET ukupnaCijena=brojDanaUNajmu * (SELECT cijenaPodanu from voziloRentPZI WHERE racunRentPZI.ID_vozila=voziloRentPZI.ID_vozila);
 
