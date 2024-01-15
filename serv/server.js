@@ -43,7 +43,7 @@ app.post("/najamRentPZI", function(req,res){
         if (error) throw error;
         //return res.send({ error: false, data: results[0], message: 'INSERT into korisnikRentPZI ime: '+ime+', prezime: '+prezime+', brojMob: '+tel });
     });
-    return res.send({message: "USPJESNO POHRANJENO U SUSTAV RACUNA. korisnik: " +ime});
+    return res.send("USPJESNO POHRANJENO U SUSTAV RACUNA. korisnik: " +ime);
 });
 
 
