@@ -15,14 +15,14 @@
 <div class="w3-container w3-teal">
         <nav class="navigacija">
             <ul class="w3-bar w3-black">
-                <a href="/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
-                <a href="/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
-                <a href="/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="/edsa-RENT/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="/edsa-RENT/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="/edsa-RENT/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
             </ul>
         </nav>
     </div>
     <center>
-    <h1>RENT A CAR</h1>
+    <h1>RENT A CAR</h1></center>
     <p></p>
     <?php
         $server = "ucka.veleri.hr:3306";
@@ -35,10 +35,10 @@
         $res = mysqli_query($conn, $query);
 
     ?>
-    </center>
-    <div>Popis vozila za najam:
+    <center>
+    <div><h2>------Sva dostupna vozila za najam------</h2>
     <table border="2px">
-            
+    <table class="center">
             <th>Proizvodjac</th>
             <th>Model</th>
             <th>Godiste</th>
