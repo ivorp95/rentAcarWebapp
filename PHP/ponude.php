@@ -60,7 +60,7 @@
                 echo "<td>".$row ["opis"]."</td>";
                 //gumb NAJAM punimo sa href link na novi 'najam.php?idVozilo=?' php prozor, odgovor iz baze za svaki redak dajemo kao =? parametar linka, 
                 //tako otvaramo novi prozor za svaki odabrani auto samo sa podacima koji odgovaraju tom ID vozila
-                echo "<td><a href='/PHP/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
+                echo "<td><a href='/edsa-RENT/PHP/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>
