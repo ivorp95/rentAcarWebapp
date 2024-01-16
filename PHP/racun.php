@@ -1,8 +1,5 @@
 <!-- Infinity  free hosting -->
 
-<!-- http server macos- http://127.0.0.1:5501   vscode plugin -->
-<!-- php server macos- http://localhost:2222    php folder CLI naredba-  php -S localhost:2022 -->
-<!-- AJAX server macos- http://localhost:3000   serv folder CLI naredba-     nodemon server.js -->
 
 
 <!DOCTYPE html>
@@ -11,7 +8,7 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rent-a-caR</title>
-    <link rel="stylesheet" href="http://127.0.0.1:5501/CSS/style_web-shop.css"-->
+    <link rel="stylesheet" href="/CSS/style_web-shop.css"-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
 
     <script>
@@ -38,9 +35,9 @@
 <div class="w3-container w3-teal">
         <nav class="navigacija">
             <ul class="w3-bar w3-black">
-                <a href="http://127.0.0.1:5501/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
-                <a href="http://localhost:2222/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
-                <a href="http://127.0.0.1:5501/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
                 <!--a href="http://localhost:2222/najam.php" class="w3-bar-item w3-button">Najam</a></li-->
             </ul>
         </nav>
