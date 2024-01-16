@@ -25,7 +25,7 @@
         document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
         }
     }
-    httpRequest.open("POST","http://localhost:3000/racunRentPZIobrisi", true);
+    httpRequest.open("POST","https://zealous-cyan-crow.cyclic.app/racunRentPZIobrisi", true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send("id="+a);
 

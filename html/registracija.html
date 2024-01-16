@@ -27,7 +27,7 @@
                 document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
             }
         }
-        httpRequest.open("POST","http://localhost:3000/korisnikRentPZI/", true);
+        httpRequest.open("POST","https://zealous-cyan-crow.cyclic.app/korisnikRentPZI/", true);
         httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpRequest.send("ime="+ime+"&prezime="+prezime+"&tel="+tel);
     }

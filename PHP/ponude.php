@@ -1,4 +1,5 @@
 <!-- Infinity  free hosting -->
+<!-- CYCLIC AJAX servis hosting https://zealous-cyan-crow.cyclic.app/ -->
 
 <!-- http server macos- http://127.0.0.1:5501   vscode plugin -->
 <!-- php server macos- http://localhost:2222    php folder CLI naredba-  php -S localhost:2022 -->

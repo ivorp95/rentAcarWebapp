@@ -30,7 +30,7 @@ function posalji(){
         }
     }
 
-    httpRequest.open("POST","http://localhost:3000/najamRentPZI/", true);
+    httpRequest.open("POST","https://zealous-cyan-crow.cyclic.app/najamRentPZI/", true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send("ime="+ime+"&brojDana="+brojDana+"&idVozilo="+idVozilo);
 
@@ -46,7 +46,7 @@ function posalji(){
             document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
         }
     }
-    httpRequest.open("PUT","http://localhost:3000/racunRentPZIupdate/", true);
+    httpRequest.open("PUT","https://zealous-cyan-crow.cyclic.app/racunRentPZIupdate/", true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send();
 
