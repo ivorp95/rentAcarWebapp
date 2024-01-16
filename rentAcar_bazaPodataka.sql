@@ -69,7 +69,8 @@ insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, 
 Doživite Porscheov genetski kod u njegovom najčišćem obliku. Tipične Porsche performanse generira 3-litreni biturbo boxerski 6-cilindarski motor s 283 kW (385 KS) snage i 450 Nm okretnog momenta.
 ');
 
-
+insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, cijenaPodanu, tipGoriva, slika, opis) values 
+(1,'PU555PV',
 #test - dodano jos 3 auta u bazu, u pregledniku  ponuda.php kod refresh ucitava nova 3 redka sa novim autima, najam i brisanje rade
 insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, cijenaPodanu, tipGoriva, slika, opis) values 
 (7,'RI2345F','Lamborghini', 'Huracan', '2018', 700, 'Benzin', 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/hero-banner/huracan/11_18_sto_lancio/Huracan_STO.png','Talijanski je proizvođač 2018. godine predstavio verziju staze Lamborghini Huracan LP640-4 Performante svijetu automobilista.

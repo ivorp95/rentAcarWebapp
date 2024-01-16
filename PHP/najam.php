@@ -77,6 +77,7 @@ function posalji(){
 
     ?>
     </center>
+    <center>
     <div>Vase odabrano vozilo za najam, molimo popunite obrazac za dovrsetak narudzbe :
     <table border="2px">
             
@@ -118,6 +119,7 @@ function posalji(){
         </form>
     </center>
     </div>
+        </center>
     <div id="korisnik_unos"></div>
 </body>
 </html>
