@@ -109,13 +109,13 @@ function posalji(){
 
     <div class="w3-container w3-teal">
         <center>
-        <form class="w3-teal">
-        <label for="">Unesite vase Ime:</label>
+        <form class="w3-teal"><br>
+        <label for="">Unesite vase Ime:</label><br>
         <input type="text" name="" id="ime" class="w3-input w3-border">
-        <label for="">Broj dana koliko zelite unajmiti vozilo:</label>
-        <input type="text" name="" id="brojDana" class="w3-input w3-border">
-        <input type="button" value="Unajmi vozilo" class="w3-btn w3-black" onclick="posalji()"><br>
-        <input type="button" value="Ispis Racuna" class="w3-btn w3-black" onclick="posaljiRacun()"><br>
+        <label for="">Broj dana koliko zelite unajmiti vozilo:</label><br>
+        <input type="text" name="" id="brojDana" class="w3-input w3-border"><br>
+        <input type="button" value="Unajmi vozilo" class="w3-btn w3-black" onclick="posalji()"><br><br>
+        <input type="button" value="Ispis Racuna" class="w3-btn w3-black" onclick="posaljiRacun()"><br><br>
         </form>
     </center>
     </div>

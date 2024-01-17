@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT A CAR</title>
+    <link rel="stylesheet" href="../CSS/style_web-shop.css"-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <script>
+
+    function posalji(){
+        let ime = document.getElementById("ime").value;
+        let poruka = document.getElementById("poruka").value;
+        
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function(){
+            if (httpRequest.readyState==4) {
+                document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
+            }
+        }
+        httpRequest.open("POST","https://zealous-cyan-crow.cyclic.app/porukaRentPZI/", true);
+        httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        httpRequest.send("ime="+ime+"&poruka=");
+    }
+</script>
+</head>
+<style>
+    body {
+      background-image: url('../slike/lam.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+    <style>
+        input[type=text], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=posalji] {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+         align-self: center;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=posalji]:hover {
+          background-color: #45a049;
+        }
+        
+        div {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        </style>
+        
+<body>
+   
+    <background image="../slike/bc.jpg"> 
+    <div class="w3-container w3-teal">
+        <nav class="navigacija">
+            <ul class="w3-bar w3-black">
+                <a href="/edsa-RENT/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="/edsa-RENT/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="/edsa-RENT/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+            </ul>
+        </nav>
+   
+    </div>
+    <center>
+    <div class="w3-container">
+  <h1>RENT A CAR</h1>    
+<br>
+        <h3>Posaljite vase misljenje</h3>
+        <br>
+
+        <div>
+          <form action="/poruka.php">
+            <label for="ime">Ime</label>
+            <input type="text" id="ime" name="">
+        
+            <label for="poruka">Poruka</label>
+            <input type="text" id="poruka" name="">
+        
+            <label for="zemlja">Zemlja</label>
+            <select id="zemlja" name="">
+              <option value="hr">Hrvatska</option>
+              <option value="sr">Srbija</option>
+              <option value="bih">Bosna i Hercegovina</option>
+              <option value="slo">Slovenija</option>
+              <option value="cg">Crna gora</option>
+              <option value="mk">Makedonija</option>
+            </select>
+          
+            <input type="posalji" value="Posalji" onclick="posalji()">
+          </form>
+        </div>
+        
+        </body>
+        </html>
+   
+
+<div id="korisnik_unos"></div>
+</body>
+</background>
+</html>
