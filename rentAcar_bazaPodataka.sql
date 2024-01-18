@@ -85,6 +85,14 @@ insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, 
 (10,'PU555PV', 'Mercedes','AMG 63 S', '2018','200','Benzin','https://p7.hiclipart.com/preview/212/951/597/2018-mercedes-benz-s-class-2018-mercedes-benz-c-class-mercedes-benz-e-class-car-mercedesbenz-amg-c-63.jpg',
 'Dok je najnoviji AMG C63 S smanjen s 4,0-litrenog V8 na hibridno opremljen četverocilindrični motor, njegov veliki brat S63 drži se svog 4,0-litrenog motora i dobiva hibridnu pomoć u obliku električnog motora na stražnjoj osovini.');
 
+insert into voziloRentPZI (ID_vozila, registracija, proizvodac, model, godiste, cijenaPodanu, tipGoriva, slika, opis) VALUES
+(11, "ST00KA", 'Ferrari','SF90 Stradale', '2022','600','benzin','https://assets-global.website-files.com/63d91aad95d038744bf46da1/6412d0fa73926cb435c3325e_suparento-rental-ferrari-sf90-stradale-large.png'
+,'Ferrari SF90 Stradale označava novo poglavlje u povijesti Ferrarija. Ovo je PHEV sa 1000 KS i maksimalnom brzinom od 340 km/h.' );
 
-
+Create table porukaRentPZI(
+ime varchar(30),
+poruka varchar(200)
+);
+insert into porukaRentPZI(ime, poruka) values 
+('jozo', 'ovo vam je najbolja aplikacija ikad');
 
