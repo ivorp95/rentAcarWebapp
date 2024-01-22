@@ -13,7 +13,7 @@
 
     <script>
     //funkcija za brisanje stavke racuna na koju kliknemo, brisu se podaci iz tablice racun za idVozila koji se poslje funkciji
-    // POST ajax metoda dobiva verijablu 'a' kroz parametar funkcije
+    // POST ajax metoda dobiva varijablu 'a' kroz parametar funkcije
         function obrisi(a){
 
         const httpRequest = new XMLHttpRequest();
