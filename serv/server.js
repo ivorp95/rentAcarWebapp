@@ -21,6 +21,22 @@ var dbConn = mysql.createConnection({
 dbConn.connect();
 
 
+// rentAcar PATRIK unos poruka u bazu
+app.post("/porukaRentPZI", function(req,res){
+    var ime = req.body.ime;
+    var poruka = req.body.poruka;
+    var zemlja= req.body.zemlja;
+    dbConn.query('INSERT INTO porukaRentPZI(ime,poruka,zemlja) VALUES (?,?,?) ', [ime, poruka, zemlja] , function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results[0], message: 'USPJESNO POSLANA PORUKA ime: '+ime+', poruka: '+poruka+', zemlja: '+zemlja });
+    });
+    //return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
+});
+
+
+
+
+
 
 // rentAcar registracija korisnika
 app.post("/korisnikRentPZI", function(req,res){

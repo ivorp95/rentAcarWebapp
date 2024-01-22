@@ -13,6 +13,7 @@
     function posalji(){
         let ime = document.getElementById("ime").value;
         let poruka = document.getElementById("poruka").value;
+        let zemlja = document.getElementById("zemlja").value;
         
         const httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function(){
@@ -20,9 +21,9 @@
                 document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
             }
         }
-        httpRequest.open("POST","http://localhost:3000", true);
+        httpRequest.open("POST","http://localhost:3000/porukaRentPZI", true);
         httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        httpRequest.send("ime="+ime+"&poruka=");
+        httpRequest.send("ime="+ime+"&poruka="+poruka+"&zemlja="+zemlja);
     }
 </script>
 </head>
