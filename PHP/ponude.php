@@ -18,6 +18,7 @@
                 <a href="/edsa-RENT/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
                 <a href="/edsa-RENT/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
                 <a href="/edsa-RENT/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="/edsa-RENT/html/poruka.html" class="w3-bar-item w3-button">Poruka</a></li>
             </ul>
         </nav>
     </div>
