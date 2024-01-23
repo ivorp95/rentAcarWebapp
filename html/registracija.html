@@ -20,7 +20,7 @@
                 document.getElementById("korisnik_unos").innerHTML=httpRequest.responseText; 
             }
         }
-        httpRequest.open("POST","http://localhost:3000/korisnikRentPZI", true);
+        httpRequest.open("POST","https://zealous-cyan-crow.cyclic.app/korisnikRentPZI", true);
         httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpRequest.send("ime="+ime+"&prezime="+prezime+"&tel="+tel);
     }
@@ -64,10 +64,10 @@
     <div class="w3-container w3-teal">
         <nav class="navigacija">
             <ul class="w3-bar w3-black">
-                <a href="/edsa-RENT/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
-                <a href="/edsa-RENT/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
-                <a href="/edsa-RENT/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
-                <a href="/edsa-RENT/html/poruka.html" class="w3-bar-item w3-button">Poruka</a>
+                <a href="/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="/html/poruka.html" class="w3-bar-item w3-button">Poruka</a>
             </ul>
         </nav>
    

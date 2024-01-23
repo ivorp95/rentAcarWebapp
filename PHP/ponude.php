@@ -15,10 +15,10 @@
 <div class="w3-container w3-teal">
         <nav class="navigacija">
             <ul class="w3-bar w3-black">
-                <a href="/edsa-RENT/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
-                <a href="/edsa-RENT/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
-                <a href="/edsa-RENT/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
-                <a href="/edsa-RENT/html/poruka.html" class="w3-bar-item w3-button">Poruka</a></li>
+                <a href="/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="/html/poruka.html" class="w3-bar-item w3-button">Poruka</a></li>
             </ul>
         </nav>
     </div>
@@ -61,7 +61,7 @@
                 echo "<td>".$row ["opis"]."</td>";
                 //gumb NAJAM punimo sa href link na novi 'najam.php?idVozilo=?' php prozor, odgovor iz baze za svaki redak dajemo kao =? parametar linka, 
                 //tako otvaramo novi prozor za svaki odabrani auto samo sa podacima koji odgovaraju tom ID vozila
-                echo "<td><a href='/edsa-RENT/PHP/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
+                echo "<td><a href='/PHP/najam.php?idVozilo=".$row ["ID_vozila"]."' target='_self'>NAJAM</a></td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>

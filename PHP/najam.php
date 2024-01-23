@@ -45,7 +45,7 @@ function posalji(){
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     httpRequest.send();
 
-    var myWindow = window.open("/edsa-RENT/PHP/racun.php", "_self");
+    var myWindow = window.open("/PHP/racun.php", "_self");
     }
 </script>
 
@@ -54,9 +54,9 @@ function posalji(){
 <div class="w3-container w3-teal">
         <nav class="navigacija">
             <ul class="w3-bar w3-black">
-                <a href="/edsa-RENT/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
-                <a href="/edsa-RENT/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
-                <a href="/edsa-RENT/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="/html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="/PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="/html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
                 <!--a href="http://localhost:2222/najam.php" class="w3-bar-item w3-button">Najam</a></li-->
             </ul>
         </nav>
