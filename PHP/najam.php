@@ -60,7 +60,7 @@ function posalji(){
         <nav class="navigacija">
             <ul class="w3-bar w3-black">
                 <a href="../html/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
-                <a href="../ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="../PHP/ponude.php" class="w3-bar-item w3-button">Sve ponude</a></li>
                 <a href="../html/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
                 <!--a href="http://localhost:2222/najam.php" class="w3-bar-item w3-button">Najam</a></li-->
             </ul>
